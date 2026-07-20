@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b42s2rsxg4ofw"]
+
+[ext_resource type="Script" uid="uid://cjy0jw8urljrm" path="res://scripts/main.gd" id="1_abc123"]
+[ext_resource type="Script" uid="uid://crwuuwsqm6l1v" path="res://scripts/data_collector.gd" id="3_abc123"]
+[ext_resource type="Script" uid="uid://bu31pjwnpos0h" path="res://scripts/world_model.gd" id="4_abc123"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1"]
+friction = 0.05
+bounce = 0.82
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 20.0
+
+[node name="Main" type="Node2D" unique_id=967066169]
+script = ExtResource("1_abc123")
+
+[node name="Ball" type="RigidBody2D" parent="." unique_id=1383598715]
+physics_material_override = SubResource("PhysicsMaterial_1")
+linear_damp = 0.05
+angular_damp = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball" unique_id=1143793168]
+shape = SubResource("CircleShape2D_1")
+
+[node name="DataCollector" type="Node" parent="." unique_id=983538970]
+script = ExtResource("3_abc123")
+
+[node name="WorldModel" type="Node" parent="." unique_id=1112199673]
+script = ExtResource("4_abc123")

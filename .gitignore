@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Training logs / temp artifacts
+training/*.log
